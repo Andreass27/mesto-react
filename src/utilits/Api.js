@@ -19,7 +19,7 @@ export default class Api {
       return fetch(this.baseUrl + '/users/me', {
         headers: this.headers
         })
-        .then(res => {
+        .then((res) => {
          return this._checkFetch(res)
         })
     }
@@ -27,9 +27,9 @@ export default class Api {
 
     getCards() { 
       return fetch(this.baseUrl + '/cards', {
-        headers: this.headers
+        headers: this.headers,
       })
-      .then(res => {
+      .then((res) => {
         return this._checkFetch(res)
       })
     }
@@ -44,22 +44,22 @@ export default class Api {
           about: about
         })
       })
-      .then(res => {
+      .then((res) => {
         return this._checkFetch(res)
       })
     }
   
 
     postCard(nameCard, linkCard) { 
-      return fetch(this.baseUrl + '/cards', {
-        method: 'POST',
+      return fetch(this.baseUrl + "/cards", {
+        method: "POST",
         headers: this.headers,
         body: JSON.stringify({
           name: nameCard,
           link: linkCard
         })
       })
-      .then(res => {
+      .then((res) => {
         return this._checkFetch(res)
       })
     }
@@ -70,7 +70,7 @@ export default class Api {
         method: 'DELETE',
         headers: this.headers
       })
-      .then(res => {
+      .then((res) => {
         return this._checkFetch(res)
       })
     }
@@ -78,27 +78,25 @@ export default class Api {
 
     addLike(cardId) {
       return fetch(this.baseUrl + '/cards/likes/' + cardId, {
-        method: 'PUT',
+        method: "PUT",
         headers: this.headers
       })
-      .then(res => {
+      .then((res) => {
         return this._checkFetch(res)
       })
     }
   
-
     deleteLike(cardId) {
       return fetch(this.baseUrl + '/cards/likes/' + cardId, {
-        method: 'DELETE',
+        method: "DELETE",
         headers: this.headers
       })
-      .then(res => {
+      .then((res) => {
         return this._checkFetch(res)
       })
     }
   
-    
-    patchAvatar(avatar) { 
+      patchAvatar(avatar) { 
       return fetch(this.baseUrl + '/users/me/avatar',{
         method: 'PATCH',
         headers: this.headers,
@@ -106,19 +104,18 @@ export default class Api {
           avatar: avatar
         })
       })
-      .then(res => {
+      .then((res) => {
         return this._checkFetch(res)
       })
     }
   }
-
-
+  
   const api = new Api({
     baseUrl: 'https://nomoreparties.co/v1/cohort-28',
     headers: {
       authorization: '37a57185-a3c1-401e-aba8-ce2242497099',
-      'Content-Type': 'application/json'
-    }
+      'Content-Type': 'application/json',
+    },
   })
   
-  export {api}
+  export {api};

@@ -24,15 +24,12 @@
     cursor: pointer;
   }
 
-
-@media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     .popup__close {
    margin-top: 0px;
     min-width: 20px;
     min-height: 20px;
     right: 0;
-    top: -22px;
-    right: -22px;
     }
-    }
+  }
     

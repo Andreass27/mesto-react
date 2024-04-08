@@ -6,9 +6,8 @@ background-repeat: no-repeat;
 object-fit: cover;
 }
 
-
 .profile__image:hover{
     cursor: pointer;
     opacity: .2;
-    transition: 0.5 linear;
+    transition: 0.5s linear;
 }
